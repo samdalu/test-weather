@@ -1,0 +1,41 @@
+ul{
+  list-style: none;
+}
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+p{
+	 margin-top: 40px;
+}
+.search{
+	background: #8DF9F4;
+    padding: 30px;
+    border-radius: 17px;
+    border: 3px solid #968484;
+}
+.result{
+	padding: 30px;
+    background: #8DF9F4;
+    border-radius: 12px;
+    margin-top: 75px;
+}
+span{
+	float:right;
+}
+li{
+	padding:5px;
+}
+.filters{
+	background: #8DF9F4;
+    padding: 30px;
+    margin-top: 184px;
+    border-radius: 21px;
+}
+.adds{
+  margin-left: 15px;
+  float: none;
+}

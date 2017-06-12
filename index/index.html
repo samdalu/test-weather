@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="SalApp">
+  <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css" >
+    <meta charset="utf-8">
+    <title>Weather Data</title>
+  </head>
+  <body>
+    <div class="container " ng-controller="MyCtrl">
+		<div class="row vertical-center">
+		<div class="col-md-6 col-md-offset-3">
+		<div class="search">
+			<input  ng-model="area">
+			<button class="btn btn-success" ng-click="ken()">Search City Data</button>
+			<p>*searching for a country will provide the capital's data by default</p>
+		</div>
+		<div class="result">
+		<ul ng-model="CountryData">
+				<li> <b>City</b>: <span>{{CountryData.location.name}}</span></li>
+				<li> <b>Country</b>: <span>{{CountryData.location.country}}</span></li>
+				<li><b>Region/continent</b>: <span>{{CountryData.location.tz_id}}</span></li>
+				<li><b>Local Time/date</b>: <span>{{CountryData.location.localtime}}</span></li>
+		</ul>
+		<ul ng-model ="CountryData" >
+				<li><b>Temprature in C</b>: <span>{{CountryData.current.temp_c}}</span></li>
+				<li><b>Condition</b>: <span>{{CountryData.current.condition.text}}</span></li>
+				<li ng-show="f.check"><b>Temprature in F</b>: <span>{{CountryData.current.temp_f}}</span></li>
+				<li ng-show="wind.check"><b>Wind Direction</b>: <span>{{CountryData.current.wind_dir}}</span></li>
+				<li ng-show="lupdate.check"><b>Last Update</b>: <span>{{CountryData.current.last_updated}}</span></li>
+				<li ng-show="humidity.check"><b>Humidity</b>: <span>{{CountryData.current.humidity}}</span></li>
+
+
+		<ul>
+		</div>
+		</div>
+		<div class="col-md-3 filters">
+		<h3>Additional Data</h3>
+		<input type="checkbox"  ng-model="f.check" /><span class="adds">Temprature in F</span></br>
+		<input type="checkbox"  ng-model="wind.check" /><span class="adds">Wind Direction</span></br>
+		<input type="checkbox"  ng-model="lupdate.check" /><span class="adds">Last Update</span></br>
+		<input type="checkbox"  ng-model="humidity.check" /><span class="adds">Humidity</span></br>
+		</div>
+		</div>
+
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="controller/controller.js"></script>
+  </body>
+</html>
